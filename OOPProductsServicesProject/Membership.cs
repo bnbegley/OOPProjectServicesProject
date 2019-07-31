@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace OOPProductsServicesProject {
-    class Product : baseclass {
+    class Membership: baseclass {
 
-
-        public decimal Price;
+        public int Fee;
         public int Units;
 
-        public override decimal CalcGetTotal() {
-            return Price * Units;
-        }
 
-        public Product (int Id, string Name, decimal Price, int Units) : base (Id, Name) {
-            this.Price = Price;
+        public override decimal CalcGetTotal() {
+            return Fee * Units;
+        }
+        public Membership (int Id, string Name, int Fee, int Units): base (Id, Name) {
+            this.Fee = Fee;
             this.Units = Units;
         }
     }
+
+
+
 }

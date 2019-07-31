@@ -4,48 +4,45 @@ namespace OOPProductsServicesProject {
     class Program {
         static void Main(string[] args) {
 
-            var p = new Products();
-            p.Name = "Basic";
-            p.Id = 1001;
-            p.Price = 10;
-            p.Units = 2500;
-            Console.WriteLine($"Name:{p.Name} units sold: {p.Units} total profit: ****");
-            Console.WriteLine($"Name:{p.Name} units sold: {p.Units} total profit: ****");
-            Console.WriteLine($"Name:{p.Name} units sold: {p.Units} total profit: ****");
+            var bw = new Product(1001, "Basic Widget", 10, 2500);
+            var aw = new Product(1002, "Advanced Widget", 25, 1500);
+            var sw = new Product(1003, "Supreme Widget", 50, 1000);
+            Console.WriteLine($"Name: {bw.Name} units sold: {bw.Units}.");
+            Console.WriteLine($"Name: {aw.Name} units sold: {aw.Units}.");
+            Console.WriteLine($"Name: {sw.Name} units sold: {sw.Units}.");
 
 
-            var bs = new Services();
-            bs.Name = "Basic Support";
-            bs.Id = 1101;
-            bs.Rate = 25;
-            bs.Hours = 1000;
-
-            var ps = new Services();
-            ps.Name = "Priority Support";
-            ps.Id = 1102;
-            ps.Rate = 50;
-            ps.Hours = 550;
-
-            var fs = new Services();
-            fs.Name = "24/7 Full Support";
-            fs.Id = 1103;
-            fs.Rate = 100;
-            fs.Hours=
+            var bs = new Service(1101, "Basic Support", 25, 1000);
+            var ps = new Service(1102, "Priority Support", 50, 550);
+            var fs = new Service(1103, "24/7 Support", 100, 750);
 
 
-            Console.WriteLine($"Name: {bs.Name} Rate: {bs.Rate}, Hours Sold: {bs.Hours} Total Profit: *****");
-            Console.WriteLine($"Name: {ps.Name} Rate: {ps.Rate}, Hours Sold: {ps.Hours} Total Profit: *****");
-            Console.WriteLine($"Name: {s.Name} Rate: {s.Rate}, Hours Sold: {s.Hours} Total Profit: *****");
+            Console.WriteLine($"Name: {bs.Name} Rate: {bs.Rate}, Hours Sold: {bs.Hours}.");
+            Console.WriteLine($"Name: {ps.Name} Rate: {ps.Rate}, Hours Sold: {ps.Hours}.");
+            Console.WriteLine($"Name: {fs.Name} Rate: {fs.Rate}, Hours Sold: {fs.Hours}.");
 
 
 
 
 
+            var sales = new baseclass[] {
+                bw,aw, sw, bs, ps, fs,
+
+            new Membership(21, "Basic Membership", 100, 1500),
+            new Membership(21, "Advanced Membership", 200, 700),
+            new Membership(21, "Premiere Membership", 400, 300)
+        }; 
+
+            var total = 0M;
+
+            foreach(var sale in sales) {
+                total += sale.CalcGetTotal();
+            }
 
 
 
 
-
+            Console.WriteLine($"Total sales is ${total}.");
 
 
 
